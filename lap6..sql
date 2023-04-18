@@ -1,4 +1,4 @@
---câu 1--
+--cÃ¢u 1--
 CREATE FUNCTION SanPham(@tenHang nvarchar(50))
 RETURNS TABLE
 AS
@@ -10,14 +10,14 @@ WHERE hs.tenhang = @tenHang
 
 SELECT * FROM DBO.SanPham(N'SAMSUNG')
 
---câu 2--
+--cÃ¢u 2--
 CREATE FUNCTION DSXuat (@x int, @y int)
 RETURNS TABLE RETURN
 SELECT Tenhang, tensp, soluongX
 FROM Xuat INNER JOIN Sanpham ON Xuat.Masp = Sanpham.masp INNER JOIN Hangsx ON Sanpham.mahangsx = Hangsx.Mahangsx
 WHERE YEAR(Ngayxuat) BETWEEN @x AND @y
 
---câu 3--
+--cÃ¢u 3--
 CREATE FUNCTION LuaChon(@luachon int)
 RETURNS @bang TABLE (tensp nvarchar(20), masp nvarchar(10),tenhang nvarchar(20), Soluong int)
 AS
@@ -37,7 +37,7 @@ BEGIN
 	RETURN
 END
 
---câu 4--
+--cÃ¢u 4--
 CREATE FUNCTION ThongTinNV (@Phong nvarchar(30))
 RETURNS TABLE RETURN
 SELECT Tennv FROM Nhanvien
@@ -45,7 +45,7 @@ WHERE Nhanvien.Phong = @Phong
 GO
 SELECT *FROM ThongTinNV ('Vat tu')
 
---câu 6--
+--cÃ¢u 6--
 CREATE FUNCTION DSXuat (@x int, @y int)
 RETURNS TABLE RETURN
 SELECT Tenhang, tensp, soluongX
@@ -54,7 +54,7 @@ WHERE YEAR(Ngayxuat) BETWEEN @x AND @y
 GO
 SELECT * FROM DSXuat(2019, 2020)
 
---câu 8--
+--cÃ¢u 8--
 CREATE FUNCTION NVNhap (@x int)
 RETURNS TABLE RETURN
 SELECT Nhanvien.Manv, Tennv, Phong
